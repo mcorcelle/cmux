@@ -12,6 +12,20 @@ import Testing
 struct SidebarWorkspaceTableTests {
     @Test
     @MainActor
+    func localReorderCorridorExtendsPastSidebarWithoutChangingSidebarLayout() {
+        let band = CGRect(x: 0, y: 0, width: 240, height: 600)
+        let corridor = SidebarWorkspaceTableLocalReorderController.reorderCorridor(for: band)
+
+        #expect(corridor.contains(CGPoint(x: -79, y: 300)))
+        #expect(corridor.contains(CGPoint(x: 479, y: 300)))
+        #expect(corridor.contains(CGPoint(x: 120, y: -59)))
+        #expect(corridor.contains(CGPoint(x: 120, y: 699)))
+        #expect(!corridor.contains(CGPoint(x: -81, y: 300)))
+        #expect(!corridor.contains(CGPoint(x: 481, y: 300)))
+    }
+
+    @Test
+    @MainActor
     func containerHasNoStructuralHorizontalRowInsetAndAlwaysActiveHoverTracking() throws {
         let container = SidebarWorkspaceTableController().makeContainerView()
         let column = try #require(container.tableView.tableColumns.first)
