@@ -46139,8 +46139,8 @@
     "cli.workspace.float.error.subcommandRequired": {
       "extractionState": "manual",
       "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "workspace float requires a subcommand. Try: list, create, show, hide, focus, close, close-all, frame, color, note, surface, pane" } },
-        "ja": { "stringUnit": { "state": "translated", "value": "workspace float にはサブコマンドが必要です。利用可能: list, create, show, hide, focus, close, close-all, frame, color, note, surface, pane" } }
+        "en": { "stringUnit": { "state": "translated", "value": "workspace float requires a subcommand. Try: list, create, show, hide, minimize, restore, focus, close, close-all, frame, color, note, surface, pane" } },
+        "ja": { "stringUnit": { "state": "translated", "value": "workspace float にはサブコマンドが必要です。利用可能: list, create, show, hide, minimize, restore, focus, close, close-all, frame, color, note, surface, pane" } }
       }
     },
     "cli.workspace.float.error.subcommandUnknown": {
@@ -46212,13 +46212,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Usage: cmux workspace float <subcommand> [flags]\n\nManage window-like Bonsplit containers scoped to one workspace. Targets the\ncaller's workspace by default. A float selector is a UUID, float:N, or the\n1-based index printed by list. Mutations preserve focus unless --focus is set.\n\nSubcommands:\n  list\n  create [--type terminal|browser|notes] [--title <title>] [--url <URL>]\n         [--color #RRGGBB] [--relative-to <float>]\n         [--x N --y N --width N --height N] [--focus]\n  show <float> [--focus] | hide <float> | focus <float> | close <float> | close-all\n  frame <float> --x N --y N --width N --height N\n  color get <float> | color set <float> --color #RRGGBB | color reset <float>\n  note get <float> | note set <float> <text>\n  surface create <float> --type terminal|browser [--pane <UUID>] [--url <URL>] [--focus]\n  pane create <float> --type terminal|browser [--surface <UUID>]\n              [--direction left|right|up|down] [--url <URL>] [--focus]\n\nShared flags: --workspace <id|ref|index>, --window <id|ref|index>, --json"
+            "value": "Usage: cmux workspace float <subcommand> [flags]\n\nManage window-like Bonsplit containers scoped to one workspace. Targets the\ncaller's workspace by default. A float selector is a UUID, float:N, or the\n1-based index printed by list. Mutations preserve focus unless --focus is set.\n\nSubcommands:\n  list\n  create [--type terminal|browser|notes] [--title <title>] [--url <URL>]\n         [--color #RRGGBB] [--relative-to <float>]\n         [--x N --y N --width N --height N] [--focus]\n  show <float> [--focus] | restore <float> [--focus]\n  hide <float> | minimize <float> | focus <float> | close <float> | close-all\n  frame <float> --x N --y N --width N --height N\n  color get <float> | color set <float> --color #RRGGBB | color reset <float>\n  note get <float> | note set <float> <text>\n  surface create <float> --type terminal|browser [--pane <UUID>] [--url <URL>] [--focus]\n  pane create <float> --type terminal|browser [--surface <UUID>]\n              [--direction left|right|up|down] [--url <URL>] [--focus]\n\nShared flags: --workspace <id|ref|index>, --window <id|ref|index>, --json"
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "使い方: cmux workspace float <サブコマンド> [フラグ]\n\n1つのワークスペースに紐づく、ウィンドウ型の Bonsplit コンテナを管理します。\n既定では呼び出し元のワークスペースが対象です。float セレクタには UUID、\nfloat:N、または list に表示される1始まりの番号を使えます。--focus を指定しない\n変更操作は現在のフォーカスを維持します。\n\nサブコマンド:\n  list\n  create [--type terminal|browser|notes] [--title <title>] [--url <URL>]\n         [--color #RRGGBB] [--relative-to <float>]\n         [--x N --y N --width N --height N] [--focus]\n  show <float> [--focus] | hide <float> | focus <float> | close <float> | close-all\n  frame <float> --x N --y N --width N --height N\n  color get <float> | color set <float> --color #RRGGBB | color reset <float>\n  note get <float> | note set <float> <text>\n  surface create <float> --type terminal|browser [--pane <UUID>] [--url <URL>] [--focus]\n  pane create <float> --type terminal|browser [--surface <UUID>]\n              [--direction left|right|up|down] [--url <URL>] [--focus]\n\n共通フラグ: --workspace <id|ref|index>, --window <id|ref|index>, --json"
+            "value": "使い方: cmux workspace float <サブコマンド> [フラグ]\n\n1つのワークスペースに紐づく、ウィンドウ型の Bonsplit コンテナを管理します。\n既定では呼び出し元のワークスペースが対象です。float セレクタには UUID、\nfloat:N、または list に表示される1始まりの番号を使えます。--focus を指定しない\n変更操作は現在のフォーカスを維持します。\n\nサブコマンド:\n  list\n  create [--type terminal|browser|notes] [--title <title>] [--url <URL>]\n         [--color #RRGGBB] [--relative-to <float>]\n         [--x N --y N --width N --height N] [--focus]\n  show <float> [--focus] | restore <float> [--focus]\n  hide <float> | minimize <float> | focus <float> | close <float> | close-all\n  frame <float> --x N --y N --width N --height N\n  color get <float> | color set <float> --color #RRGGBB | color reset <float>\n  note get <float> | note set <float> <text>\n  surface create <float> --type terminal|browser [--pane <UUID>] [--url <URL>] [--focus]\n  pane create <float> --type terminal|browser [--surface <UUID>]\n              [--direction left|right|up|down] [--url <URL>] [--focus]\n\n共通フラグ: --workspace <id|ref|index>, --window <id|ref|index>, --json"
           }
         }
       }
@@ -62523,6 +62523,20 @@
       "localizations": {
         "en": { "stringUnit": { "state": "translated", "value": "New Browser Floating Window" } },
         "ja": { "stringUnit": { "state": "translated", "value": "新しいブラウザフローティングウインドウ" } }
+      }
+    },
+    "command.minimizeFloatingWindow.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Minimize Floating Window" } },
+        "ja": { "stringUnit": { "state": "translated", "value": "フローティングウインドウを最小化" } }
+      }
+    },
+    "command.restoreWorkspaceFloatingWindows.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Restore Minimized Floating Windows" } },
+        "ja": { "stringUnit": { "state": "translated", "value": "最小化したフローティングウインドウを復元" } }
       }
     },
     "command.customizeFloatingWindowColor.title": {
@@ -101496,6 +101510,13 @@
         "ja": { "stringUnit": { "state": "translated", "value": "フローティングウインドウの色" } }
       }
     },
+    "floatingDock.error.presentation": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": { "stringUnit": { "state": "translated", "value": "Failed to update floating window visibility" } },
+        "ja": { "stringUnit": { "state": "translated", "value": "フローティングウインドウの表示状態を更新できませんでした" } }
+      }
+    },
     "floatingDock.note.title": {
       "extractionState": "manual",
       "localizations": {
@@ -101526,6 +101547,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "新しいターミナルフローティングウインドウ"
+          }
+        }
+      }
+    },
+    "floatingDock.window.minimize": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minimize Floating Window"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "フローティングウインドウを最小化"
           }
         }
       }
